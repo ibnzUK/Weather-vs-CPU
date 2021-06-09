@@ -3,11 +3,11 @@ import wave from '../../assets/wave.svg';
 
 
 const Waves = () => {
-    return (
-        <div>
-              <img src={wave} alt="wave" />
-        </div>
-    );
+  return (
+    <>
+      <img src={wave} alt="wave" />
+    </>
+  );
 };
 
 export default Waves;

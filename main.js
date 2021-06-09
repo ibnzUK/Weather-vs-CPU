@@ -1,15 +1,12 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require('electron');
 
-// console.log('boo') // I don't know what linux is.
-
-
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    icon: 'public/favicon.ico' // icon for windows
+    icon: 'public/favicon.ico', // icon for windows
     //for mac use .icns
   });
 

@@ -14,14 +14,15 @@
 - [x] Initialised basic dependencies 
 - [x] React with electron integrated
 - [x] Added UI waves
-- [x] Icon
+- [x] Icon designed and added
+- [x] Added application grid and some dummy data
 
 
 * 
 - [-] Obtain API Keys, Store and Secure
-- [-] Fetch data from Api for weather temperature  (axios)
+- [-] Fetch data from API for weather temperature  (axios)
 - [-] Fetch temp from API, (useEffect hook)
-- [-] Get my location data, feed to api
+- [-] Get my location data, feed to API
 - [-] Access OS Cpu data, (maybe with node.js or library)  
 - [-] Optimise for different OS (process.platform darwin win32 linux)
 - [-] Load and Display data side by side for (visual representation)

@@ -1,0 +1,17 @@
+.Card {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 3em 15em auto 25em auto;
+    height: 100%;
+}
+
+
+.CardShape {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    background-color: rgba(248, 27, 56, 0.048);
+    height: 100%;
+    border-radius: 2em
+
+}
