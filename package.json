@@ -1,5 +1,7 @@
 {
   "name": "weather-vs-cpu",
+  "homepage": "./",
+  "main": "./electron/main.js",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,20 +9,22 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "concurrently": "^6.2.0",
-    "electron": "^13.1.1",
+    "electron": "^13.1.2",
+    "electron-builder": "^22.10.5",
+    "electron-is-dev": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "wait-on": "^5.3.0",
     "web-vitals": "^1.1.2"
   },
-  "main": "main.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron-react": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\""
+    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "ebuild": "npm run build && node_modules/.bin/build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,15 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "devDependencies": {},
-  "keywords": [
-    "weather",
-    "cpu",
-    "measuring",
-    "app"
-  ],
-  "author": "Justinas Kairys",
-  "license": "ISC"
+  }
 }

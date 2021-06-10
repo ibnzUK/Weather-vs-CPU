@@ -16,11 +16,11 @@
 - [x] Added UI waves
 - [x] Icon designed and added
 - [x] Added application grid and some dummy data
-
-
+* 
+- [x] Project structure optimised 
 * 
 - [-] Obtain API Keys, Store and Secure
-- [-] Fetch data from API for weather temperature  (axios)
+- [-] Fetch data from API for weather temperature  (axios?)
 - [-] Fetch temp from API, (useEffect hook)
 - [-] Get my location data, feed to API
 - [-] Access OS Cpu data, (maybe with node.js or library)  
@@ -34,8 +34,10 @@
 
 ## Running instructions
 * Copy project to your directory ( `git clone https://github.com/ibnzUK/weather-vs-cpu` )
+* If you are Runing a Windows Subsystem for Linux (WSL), it is recommended to install project using PowerShel, GitBash or Command Prompt terminal 
 * Install project packages (`npm install`)
-* Start project (`npm run electron-react`)
+* To Start electron application project (`npm run dev`)
+* To Start development build on localhost http://localhost:3000  (`npm start`)
 
 ## For Testing
 ..
