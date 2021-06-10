@@ -18,6 +18,10 @@
 - [x] Added application grid and some dummy data
 * 
 - [x] Project structure optimised 
+- [x] Added OpenWeatherMap API 
+- [x] Implemented ability to pass Location data as props
+- [x] API Keys stored and secured
+
 * 
 - [-] Obtain API Keys, Store and Secure
 - [-] Fetch data from API for weather temperature  (axios?)

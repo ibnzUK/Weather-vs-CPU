@@ -1,4 +1,5 @@
 import React from 'react';
+import Weather from '../Weather';
 import classes from './Card.module.css';
 
 const Card = () => {
@@ -8,7 +9,7 @@ const Card = () => {
         <h1>Weather vs CPU</h1>
         <br></br>
         <div>
-          <h4>Current temp: 18.1 C</h4>
+          <Weather place={['london', 'uk']}/>
           <h3>CPU temperature: 39 C</h3>
         </div>
       </div>
