@@ -21,9 +21,11 @@
 - [x] Added OpenWeatherMap API 
 - [x] Implemented ability to pass Location data as props
 - [x] API Keys stored and secured
+- [x] Added ability to read CPU data
 
 * 
 - [-] Obtain API Keys, Store and Secure
+- [-] CPU data for mac , linux
 - [-] Fetch data from API for weather temperature  (axios?)
 - [-] Fetch temp from API, (useEffect hook)
 - [-] Get my location data, feed to API

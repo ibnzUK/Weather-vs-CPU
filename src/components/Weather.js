@@ -33,6 +33,7 @@ const Weather = (props) => {
   }, []);
 
   console.log(weatherData);
+  
   return (
     <div>
       <h2>

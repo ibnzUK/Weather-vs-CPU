@@ -2,6 +2,8 @@ import React from 'react';
 import Weather from '../Weather';
 import classes from './Card.module.css';
 
+
+
 const Card = () => {
   return (
     <div className={classes.Card}>

@@ -4,11 +4,17 @@ const path = require('path');
 
 let mainWindow;
 
+
+
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     show: false,
+    webPreferences: {
+      nodeIntegration: true
+    },
     icon: 'public/favicon.ico', // icon for windows
     //for mac use .icns
   });
@@ -24,6 +30,21 @@ function createWindow() {
   });
 }
 // app.on('ready', createWindow);
+
+//trying to fetch CPU details
+const si = require('systeminformation');
+async function cpuData() {
+  try {
+    const data = await si.cpu();
+    console.log('CPU Information:', data.brand);
+  } catch (e) {
+    console.log(e);
+  }
+}
+cpuData()
+//Getting os details
+console.log('checking platform: ', process.platform);
+
 
 // Open the DevTools.
 // mainWindow.webContents.openDevTools()
