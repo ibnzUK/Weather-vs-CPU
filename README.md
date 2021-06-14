@@ -8,7 +8,8 @@
 ![Preview](src/assets/screenshot.png)
 - 
 ## Changes
-
+* 
+Version 0.0.1
 - [x] README boilerplate added
 - [x] Basic project structure created
 - [x] Initialised basic dependencies 
@@ -17,6 +18,7 @@
 - [x] Icon designed and added
 - [x] Added application grid and some dummy data
 * 
+Version 0.0.2
 - [x] Project structure optimised 
 - [x] Added OpenWeatherMap API 
 - [x] Implemented ability to pass Location data as props
@@ -24,6 +26,11 @@
 - [x] Added ability to read CPU data
 
 * 
+Version 0.0.3
+- [x] Project structure optimised 
+
+* 
+To do
 - [-] Obtain API Keys, Store and Secure
 - [-] CPU data for mac , linux
 - [-] Fetch data from API for weather temperature  (axios?)
