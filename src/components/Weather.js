@@ -5,8 +5,8 @@ const Weather = (props) => {
   const [temp, setTemp] = useState(' .');
   const [location, setLocation] = useState(['loading . . ', '.']);
   const Place = props.place;
-  const API_Key = process.env.REACT_APP_API_KEY;
-  const API_URL = `http://api.openweathermap.org/data/2.5/weather?q=${Place[0]},${Place[1]}&APPID=${API_Key}&&units=metric`;
+  const API_Key3 = process.env.REACT_APP_API_KEY;
+  const API_URL = `http://api.openweathermap.org/data/2.5/weather?q=${Place[0]},${Place[1]}&APPID=${API_Key3}&&units=metric`;
   
 
   const loadData = async () => {

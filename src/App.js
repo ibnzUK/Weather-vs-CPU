@@ -1,16 +1,17 @@
-import classes from './App.module.css';
-import Card from './components/UI/Card';
-import Waves from './components/UI/Waves';
+import React from 'react';
 import Footer from './components/Footer';
+import Waves from './components/UI/Waves';
+import Card from './components/UI/Card';
+import classes from './App.module.css';
 
-function App() {
+const App = () => {
   return (
     <div className={classes.App}>
       <Waves />
       <Card />
-      <Footer/>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
