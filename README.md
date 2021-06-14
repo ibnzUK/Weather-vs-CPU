@@ -8,8 +8,8 @@
 ![Preview](src/assets/screenshot.png)
 - 
 ## Changes
-* 
-Version 0.0.1
+
+Version 0.01
 - [x] README boilerplate added
 - [x] Basic project structure created
 - [x] Initialised basic dependencies 
@@ -18,22 +18,30 @@ Version 0.0.1
 - [x] Icon designed and added
 - [x] Added application grid and some dummy data
 * 
-Version 0.0.2
+Version 0.02
 - [x] Project structure optimised 
 - [x] Added OpenWeatherMap API 
 - [x] Implemented ability to pass Location data as props
-- [x] API Keys stored and secured
-- [x] Added ability to read CPU data
+- [x] Obtained API Keys, Stored and Secured
+- [x] Added ability to read API from pc data
 
 * 
-Version 0.0.3
-- [x] Project structure optimised 
+Version 0.03
+- [x] Project structure and size reduced
+- [x] Added ability for frontend to communicate with backend 
+- [x] Added Bat script to read temperature on Windows (need admin rights)
+- [x] Added Custom Menu, submenu options
+- [x] Added Shortcuts for menu items
+- [x] Added Ability to package application for production
+- [x] Added Openhardwaremonitor https://github.com/openhardwaremonitor/openhardwaremonitor
 
 * 
-To do
-- [-] Obtain API Keys, Store and Secure
+Things to do
+- [-] Obtain Admin rights for cpu temp fetching
+- [-] Get process ID for Openhardwaremonitor termination on app close
 - [-] CPU data for mac , linux
-- [-] Fetch data from API for weather temperature  (axios?)
+- [-] Add support for React dev tools
+- [-] Get my location data, feed to API
 - [-] Access OS Cpu data, (maybe with node.js or library)  
 - [-] Optimise for different OS (process.platform darwin win32 linux)
 - [-] Load and Display data side by side for (visual representation)
@@ -45,10 +53,12 @@ To do
 
 ## Running instructions
 * Copy project to your directory ( `git clone https://github.com/ibnzUK/weather-vs-cpu` )
-* If you are Runing a Windows Subsystem for Linux (WSL), it is recommended to install project using PowerShel, GitBash or Command Prompt terminal 
+* If you are Runing a Windows Subsystem for Linux (WSL), it is recommended to install project using PowerShel, GitBash or Command Prompt terminal (Concurrently dependency related) 
+* Make sure to have Node.js Version >= 12.13.0. For Electron Forge 
 * Install project packages (`npm install`)
 * To Start electron application project (`npm run dev`)
-* To Start development build on localhost http://localhost:3000  (`npm start`)
+* To Package up application for distribution (`npm run make`) 
+* 
 
 ## For Testing
 ..

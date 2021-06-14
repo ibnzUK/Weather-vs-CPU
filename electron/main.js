@@ -1,6 +1,18 @@
-const { BrowserWindow, app, ipcMain, Notification, Menu } = require('electron');
+const { BrowserWindow, app, ipcMain, Notification, Menu, shell } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
+
+// const { spawn } = require('child_process');
+// const proc = spawn("OpenHardwareMonitor.exe");
+
+// const list = await require("find-process")("pid", proc.pid);
+// app.quit();
+// if (list[0] && list[0].name.toLowerCase() === "OpenHardwareMonitor.exe")
+//     process.kill(proc.pid);
+
+
+
+
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling
 if (require('electron-squirrel-startup')) {
@@ -18,7 +30,12 @@ const menuTemplate = [
           new Notification({ title: 'Notifiation', body: 'HI' }).show();
         },
       },
-      { label: 'Get CPU Temperature' },
+      { label: 'Get CPU Temperature',
+    
+      click() {
+        shell.openPath(  path.join(__dirname, '../scripts/OpenHardwareMonitor.exe'))
+      },
+    },
       {
         label: 'Exit',
         accelerator: process.platform === 'darwin' ? 'Command+Q' : 'Ctrl+Q',
@@ -53,6 +70,9 @@ if (isDev) {
 //adding extra menu element when on mac
 if (process.platform === 'darwin') {
   menuTemplate.unshift({});
+} else {
+//starting OpenHardwareMonitor for Windows
+  shell.openPath(  path.join(__dirname, '../scripts/OpenHardwareMonitor.exe'));
 }
 
 function createWindow() {
@@ -90,6 +110,8 @@ function createWindow() {
   Menu.setApplicationMenu(mainMenu);
 }
 
+
+
 //some functions to communicate from react
 ipcMain.on('asynchronous-message', (event) => {
   console.log('Getting platform:', process.platform); // prints in terminal not console"
@@ -115,9 +137,14 @@ app.whenReady().then(() => {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
+
+
+
   if (process.platform !== 'darwin') {
     app.quit();
   }
+ 
+ 
 });
 
 app.on('activate', () => {
