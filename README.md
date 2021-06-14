@@ -34,8 +34,6 @@ To do
 - [-] Obtain API Keys, Store and Secure
 - [-] CPU data for mac , linux
 - [-] Fetch data from API for weather temperature  (axios?)
-- [-] Fetch temp from API, (useEffect hook)
-- [-] Get my location data, feed to API
 - [-] Access OS Cpu data, (maybe with node.js or library)  
 - [-] Optimise for different OS (process.platform darwin win32 linux)
 - [-] Load and Display data side by side for (visual representation)
