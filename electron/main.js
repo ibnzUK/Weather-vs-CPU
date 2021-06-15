@@ -1,6 +1,7 @@
 const { BrowserWindow, app, ipcMain, Notification, Menu, shell } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
+const temp = require('../scripts/test')
 
 // const { spawn } = require('child_process');
 // const proc = spawn("OpenHardwareMonitor.exe");
@@ -24,13 +25,19 @@ const menuTemplate = [
   {
     label: 'File',
     submenu: [
+      { label: 'Test',
+    
+      click() {
+       console.log(temp);
+      },
+    },
       {
         label: 'Get Weather',
         click() {
           new Notification({ title: 'Notifiation', body: 'HI' }).show();
         },
       },
-      { label: 'Get CPU Temperature',
+      { label: 'Start CPU Monitoring',
     
       click() {
         shell.openPath(  path.join(__dirname, '../scripts/OpenHardwareMonitor.exe'))

@@ -1,11 +1,20 @@
 const { contextBridge, ipcRenderer } = require('electron');
+const {tempDetails} = require('../scripts/test');
+
+
+
 
 contextBridge.exposeInMainWorld('electron', {
-  doThing: () => ipcRenderer.send('asynchronous-message', 'EUREKA'),
+  // doThing: () => ipcRenderer.send('asynchronous-message', 'EUREKA'),
+
+  getTemp: () => {
+    // console.log(tempDetails());
+    return tempDetails();
+
+  },
 
   notificationApi: {
     sendNotification(message) {
-      console.log(message);
       ipcRenderer.send('notify', message);
     },
   },

@@ -34,15 +34,20 @@ Version 0.03
 - [x] Added Shortcuts for menu items
 - [x] Added Ability to package application for production
 - [x] Added Openhardwaremonitor https://github.com/openhardwaremonitor/openhardwaremonitor
+* 
+Version 0.04
+- [x] CPU Temperature Monitoring function added
+- [x] Start auto monitoring from menu
 
 * 
 Things to do
-- [-] Obtain Admin rights for cpu temp fetching
+- [-] Add Fetch data once
+- [-] Add Auto monitoring
+- [-] Add ability to identify processors cores
+- [-] Add ability to Change Town,
 - [-] Get process ID for Openhardwaremonitor termination on app close
-- [-] CPU data for mac , linux
 - [-] Add support for React dev tools
 - [-] Get my location data, feed to API
-- [-] Access OS Cpu data, (maybe with node.js or library)  
 - [-] Optimise for different OS (process.platform darwin win32 linux)
 - [-] Load and Display data side by side for (visual representation)
 - [-] Analyse results (visual representation)
