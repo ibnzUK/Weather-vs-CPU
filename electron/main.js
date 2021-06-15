@@ -1,7 +1,7 @@
 const { BrowserWindow, app, ipcMain, Notification, Menu, shell } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
-const temp = require('../scripts/test')
+const stop = require('../scripts/stop')
 
 // const { spawn } = require('child_process');
 // const proc = spawn("OpenHardwareMonitor.exe");
@@ -25,10 +25,10 @@ const menuTemplate = [
   {
     label: 'File',
     submenu: [
-      { label: 'Test',
+      { label: 'Stop',
     
       click() {
-       console.log(temp);
+       console.log(stop);
       },
     },
       {

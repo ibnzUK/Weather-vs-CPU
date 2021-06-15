@@ -1,35 +1,10 @@
-import { React, useState, useEffect } from 'react';
+import React from 'react';
 import Weather from '../Weather';
+import Cpu from '../Cpu';
+
 import classes from './Card.module.css';
 
-let fetchedTemperature = window.electron.getTemp();
-
 const Card = () => {
-  const [temp, setTemp] = useState(['Reading..']);
-
-  const loadData = async () => {
-    fetchedTemperature = await window.electron.getTemp();
-
-    if (!fetchedTemperature[0]) {
-      // setTemp(['Reading..']);
-    } else if (fetchedTemperature.length - 1 === undefined) {
-      // setTemp(['Reading..']);
-    } else {
-      //all good set temp to this val
-      setTemp(fetchedTemperature[fetchedTemperature.length - 1]);
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      loadData();
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []); 
-
   return (
     <div className={classes.Card}>
       <div className={classes.CardShape}>
@@ -37,7 +12,6 @@ const Card = () => {
           onClick={() => {
             // window.electron.notificationApi.sendNotification('getting CPU Temperature');
             // console.log(  window.electron.getTemp());
-            loadData();
           }}
         >
           Update Temperature and Weather
@@ -45,7 +19,9 @@ const Card = () => {
         <button
           onClick={() => {
             // window.electron.doThing();
-            window.electron.notificationApi.sendNotification('getting CPU Temperature');
+            window.electron.notificationApi.sendNotification(
+              'getting CPU Temperature'
+            );
           }}
         >
           Stop Monitoring
@@ -55,7 +31,7 @@ const Card = () => {
         <br></br>
         <div>
           <Weather place={['London', '']} />
-          <h3>CPU temperature: {temp} C</h3>
+          <Cpu />
         </div>
       </div>
     </div>

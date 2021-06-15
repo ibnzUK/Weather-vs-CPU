@@ -37,10 +37,12 @@ Version 0.03
 * 
 Version 0.04
 - [x] CPU Temperature Monitoring function added
-- [x] Start auto monitoring from menu
+- [x] Start auto monitoring from menu added
 
 * 
 Things to do
+- [-] Add propper description on how to use
+- [-] Add ability to stopp monitoring from app
 - [-] Add Fetch data once
 - [-] Add Auto monitoring
 - [-] Add ability to identify processors cores

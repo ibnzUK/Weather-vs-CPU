@@ -1,5 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron');
-const {tempDetails} = require('../scripts/test');
+const {tempDetails} = require('../scripts/tempChecker');
 
 
 
