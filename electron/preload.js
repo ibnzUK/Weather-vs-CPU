@@ -4,6 +4,7 @@ const {tempDetails} = require('../scripts/tempChecker');
 
 
 
+
 contextBridge.exposeInMainWorld('electron', {
   // doThing: () => ipcRenderer.send('asynchronous-message', 'EUREKA'),
 

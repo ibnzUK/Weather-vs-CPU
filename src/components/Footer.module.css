@@ -6,4 +6,7 @@
   background-color: rgba(255, 88, 88, 0.116);
   color: white;
   text-align: center;
+  grid-column-start: 2;
+  grid-row-start: 5;
+
 }

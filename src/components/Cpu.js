@@ -8,14 +8,16 @@ const Cpu = () => {
   const loadData = async () => {
     fetchedTemperature = await window.electron.getTemp();
 
-    if (!fetchedTemperature[0]) {
-      // setTemp(['Reading..']);
-    } else if (fetchedTemperature.length - 1 === undefined) {
-      // setTemp(['Reading..']);
-    } else {
-      //all good set temp to this val
-      setTemp(fetchedTemperature[fetchedTemperature.length - 1]);
-    }
+
+
+        if (!fetchedTemperature[0]) {
+          // setTemp(['Reading..']);
+        } else if (fetchedTemperature.length - 1 === undefined) {
+          // setTemp(['Reading..']);
+        } else {
+          //all good set temp to this val
+          setTemp(fetchedTemperature[fetchedTemperature.length - 1]);
+        }
   };
 
   useEffect(() => {
@@ -30,7 +32,9 @@ const Cpu = () => {
 
   return (
     <>
-      <h3>CPU temperature: {temp}  <span> &#8451;</span></h3>
+      <h3>
+        CPU temperature: {temp} <span> &#8451;</span>
+      </h3>
     </>
   );
 };

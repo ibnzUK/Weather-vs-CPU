@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const Weather = (props) => {
-  const [weatherData, setWeatherData] = useState('Loading data');
   const [temp, setTemp] = useState(' .');
   const [location, setLocation] = useState(['loading . . ', '.']);
   const Place = props.place;
@@ -17,12 +16,11 @@ const Weather = (props) => {
       })
       .then((data) => {
         // getting fetched data and storing to state
-        setWeatherData(data);
         setTemp(data.main.temp);
         setLocation([data.name, data.sys.country]);
       })
       .catch((err) => {
-        // Do something for an error here
+        // Report Error
         console.log('Error Reading data ' + err);
       });
   };
@@ -31,8 +29,6 @@ const Weather = (props) => {
     loadData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  console.log(weatherData);
   
   return (
     <div>

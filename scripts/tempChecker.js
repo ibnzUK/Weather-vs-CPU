@@ -9,11 +9,12 @@ let month = ('0' + (date_ob.getMonth() + 1)).slice(-2);
 let year = date_ob.getFullYear();
 let fileExist = false;
 
-//constructing name  OpenHardwareMonitorLog-2021-06-14
+//constructing name  OpenHardwareMonitorLog-2021-06-14 or similar
 let fileName = `OpenHardwareMonitorLog-${year}-${month}-${date}.csv`;
 
-//need to get this name for non intel CPU
-let optionFromCSV = '/intelcpu/0/temperature/0';
+//Import your CPU core values from log file OpenHardwareMonitorLog-XXXX-XX-XX.csv
+//For example for CPU Package average temperature:  intelcpu/0/temperature/4
+let optionFromCSV = '/intelcpu/0/temperature/4';
 
 //init value
 let currentTemp = ['Reading CPU Temperature ....'];
@@ -34,7 +35,6 @@ const fetchData = () => {
       .pipe(csv())
       .on('data', (row) => {
         currentTemp.push(row[optionFromCSV]);
-        // const column_two = records.map(rec => rec["GPU Core"]);
       })
       .on('end', () => {
         return currentTemp;

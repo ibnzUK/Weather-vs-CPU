@@ -1,19 +1,14 @@
-const { BrowserWindow, app, ipcMain, Notification, Menu, shell } = require('electron');
+const {
+  BrowserWindow,
+  app,
+  ipcMain,
+  Notification,
+  Menu,
+  shell,
+} = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
-const stop = require('../scripts/stop')
-
-// const { spawn } = require('child_process');
-// const proc = spawn("OpenHardwareMonitor.exe");
-
-// const list = await require("find-process")("pid", proc.pid);
-// app.quit();
-// if (list[0] && list[0].name.toLowerCase() === "OpenHardwareMonitor.exe")
-//     process.kill(proc.pid);
-
-
-
-
+const { stopOHM } = require('../scripts/stop');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling
 if (require('electron-squirrel-startup')) {
@@ -25,29 +20,42 @@ const menuTemplate = [
   {
     label: 'File',
     submenu: [
-      { label: 'Stop',
-    
-      click() {
-       console.log(stop);
-      },
-    },
       {
-        label: 'Get Weather',
+        label: 'Refresh',
+        role: 'reload',
+      },
+      {
+        label: 'Start CPU Monitoring',
+        accelerator:
+          process.platform === 'darwin' ? 'Command+Alt+S' : 'Ctrl+Alt+S',
+
         click() {
-          new Notification({ title: 'Notifiation', body: 'HI' }).show();
+          shell.openPath(
+            path.join(__dirname, '../scripts/OpenHardwareMonitor.exe')
+          );
         },
       },
-      { label: 'Start CPU Monitoring',
-    
-      click() {
-        shell.openPath(  path.join(__dirname, '../scripts/OpenHardwareMonitor.exe'))
+      {
+        label: 'Quit CPU Monitoring',
+        accelerator:
+          process.platform === 'darwin' ? 'Command+Alt+Q' : 'Ctrl+Alt+Q',
+
+        click() {
+          stopOHM();
+        },
       },
-    },
       {
         label: 'Exit',
         accelerator: process.platform === 'darwin' ? 'Command+Q' : 'Ctrl+Q',
         click() {
-          app.quit();
+          stopOHM();
+          //closing app
+          waitForProcessKill();
+          function waitForProcessKill() {
+            setTimeout(function () {
+              app.quit();
+            }, 1000);
+          }
         },
       },
     ],
@@ -78,15 +86,15 @@ if (isDev) {
 if (process.platform === 'darwin') {
   menuTemplate.unshift({});
 } else {
-//starting OpenHardwareMonitor for Windows
-  shell.openPath(  path.join(__dirname, '../scripts/OpenHardwareMonitor.exe'));
+  //starting OpenHardwareMonitor for Windows
+  shell.openPath(path.join(__dirname, '../scripts/OpenHardwareMonitor.exe'));
 }
 
 function createWindow() {
   // Create the browser window.
   let mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: 1024,
+    height: 768,
     backgroundColor: 'white',
     webPreferences: {
       nodeIntegration: false,
@@ -117,8 +125,6 @@ function createWindow() {
   Menu.setApplicationMenu(mainMenu);
 }
 
-
-
 //some functions to communicate from react
 ipcMain.on('asynchronous-message', (event) => {
   console.log('Getting platform:', process.platform); // prints in terminal not console"
@@ -144,14 +150,17 @@ app.whenReady().then(() => {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
-
-
-
   if (process.platform !== 'darwin') {
-    app.quit();
+    //closing all wndows
+    stopOHM();
+    //closing app
+    waitForProcessKill();
+    function waitForProcessKill() {
+      setTimeout(function () {
+        app.quit();
+      }, 1000);
+    }
   }
- 
- 
 });
 
 app.on('activate', () => {

@@ -2,7 +2,7 @@
 # Weather vs CPU <h1>
 
 
-#### Electron, React crossplatform application, to detect how current, local weather influence my computer's core temperature and performance <h6>
+#### Electron, React cross-platform application, to detect how current, local weather influences my computer's core temperature and performance <h6>
 
 
 ![Preview](src/assets/screenshot.png)
@@ -28,29 +28,26 @@ Version 0.02
 * 
 Version 0.03
 - [x] Project structure and size reduced
-- [x] Added ability for frontend to communicate with backend 
-- [x] Added Bat script to read temperature on Windows (need admin rights)
+- [x] Added ability for front-end to communicate with backend 
+- [x] Added Bat script to read the temperature on Windows (need admin rights)
 - [x] Added Custom Menu, submenu options
 - [x] Added Shortcuts for menu items
-- [x] Added Ability to package application for production
+- [x] Added Ability to package the application for production
 - [x] Added Openhardwaremonitor https://github.com/openhardwaremonitor/openhardwaremonitor
 * 
 Version 0.04
 - [x] CPU Temperature Monitoring function added
-- [x] Start auto monitoring from menu added
+- [x] Added Start and Stop auto-monitoring from the main menu
+- [x] Added ability to stop monitoring from app
+- [x] Add ability to identify and quit running processes 
 
 * 
 Things to do
-- [-] Add propper description on how to use
-- [-] Add ability to stopp monitoring from app
-- [-] Add Fetch data once
-- [-] Add Auto monitoring
+- [-] Add proper description on how to use
 - [-] Add ability to identify processors cores
-- [-] Add ability to Change Town,
-- [-] Get process ID for Openhardwaremonitor termination on app close
+- [-] Add ability to Change town or get location data
 - [-] Add support for React dev tools
-- [-] Get my location data, feed to API
-- [-] Optimise for different OS (process.platform darwin win32 linux)
+- [-] Optimise for different OS (process.platform darwin, win32, linux)
 - [-] Load and Display data side by side for (visual representation)
 - [-] Analyse results (visual representation)
 
@@ -60,7 +57,7 @@ Things to do
 
 ## Running instructions
 * Copy project to your directory ( `git clone https://github.com/ibnzUK/weather-vs-cpu` )
-* If you are Runing a Windows Subsystem for Linux (WSL), it is recommended to install project using PowerShel, GitBash or Command Prompt terminal (Concurrently dependency related) 
+* If you are Running a Windows Subsystem for Linux (WSL), it is recommended to install the project using PowerShell, GitBash or Command Prompt terminal (Concurrently dependency related) 
 * Make sure to have Node.js Version >= 12.13.0. For Electron Forge 
 * Install project packages (`npm install`)
 * To Start electron application project (`npm run dev`)
