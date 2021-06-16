@@ -2,6 +2,11 @@ const csv = require('csv-parser');
 const fs = require('fs');
 const path = require('path');
 
+//Import your CPU core values from log file OpenHardwareMonitorLog-XXXX-XX-XX.csv
+//For example for CPU Package average temperature:  intelcpu/0/temperature/4
+let optionFromCSV = '/intelcpu/0/temperature/4';
+
+
 //getting date for filename
 let date_ob = new Date();
 let date = ('0' + date_ob.getDate()).slice(-2);
@@ -11,10 +16,6 @@ let fileExist = false;
 
 //constructing name  OpenHardwareMonitorLog-2021-06-14 or similar
 let fileName = `OpenHardwareMonitorLog-${year}-${month}-${date}.csv`;
-
-//Import your CPU core values from log file OpenHardwareMonitorLog-XXXX-XX-XX.csv
-//For example for CPU Package average temperature:  intelcpu/0/temperature/4
-let optionFromCSV = '/intelcpu/0/temperature/4';
 
 //init value
 let currentTemp = ['Reading CPU Temperature ....'];

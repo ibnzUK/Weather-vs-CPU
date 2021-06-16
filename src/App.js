@@ -8,7 +8,6 @@ const App = () => {
     <div className={classes.App}>
       <Waves />
       <Card />
-   
     </div>
   );
 };

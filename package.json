@@ -81,7 +81,7 @@
       ]
     }
   },
-  "description": "Electron, React crossplatform application, to detect how current, local weather influence my computer's core temperature and performance",
+  "description": "Electron, React application to display current, local weather and computers CPU temperature",
   "author": "Justinas Kairys",
   "keywords": [
     "electron",
