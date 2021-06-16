@@ -2,8 +2,10 @@
     display: grid;
     grid-gap: 1px;
     grid-template-columns: auto auto auto;
-    grid-template-rows: 3em 15em auto 16em 3em;
+    grid-template-rows: 3em 15em auto 10em 5em;
     height: 100%;
+   
+
 }
 
 
@@ -15,10 +17,19 @@
     border-radius: 2em;
     margin-top: 1em;
     padding: 3em;
+    /* min-height: 500px; */
 
 }
 
 .Foot {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 6;
+    
+}
+
+.Info {
     grid-column-start: 2;
     grid-row-start: 5;
+ 
 }

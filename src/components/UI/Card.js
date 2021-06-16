@@ -36,6 +36,7 @@ const Card = () => {
           <Cpu />
         </div>
       </div>
+        <div className={classes.Info}><p> Optimal CPU Temperature: Idle 45°C - 65°C, Heavy Load 70°C - 95°C </p></div>
         <div className={classes.Foot}>
           <Footer/>
         </div>

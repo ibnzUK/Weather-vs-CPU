@@ -8,5 +8,13 @@
   text-align: center;
   grid-column-start: 2;
   grid-row-start: 5;
+  /* height: 2em; */
 
 }
+
+.Foot p {
+  padding: 1em;
+
+}
+
+

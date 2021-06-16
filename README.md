@@ -47,8 +47,10 @@ Things to do
 - [-] Add ability to identify processors cores
 - [-] Add ability to Change town or get location data
 - [-] Add support for React dev tools
+
 - [-] Optimise for different OS (process.platform darwin, win32, linux)
 - [-] Load and Display data side by side for (visual representation)
+- [-] Collected data need to be pushed to db ( or on users machine )
 - [-] Analyse results (visual representation)
 
 
