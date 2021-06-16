@@ -1,7 +1,6 @@
 import React from 'react';
 import wave from '../../assets/wave.svg';
 
-
 const Waves = () => {
   return (
     <>

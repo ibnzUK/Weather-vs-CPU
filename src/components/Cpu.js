@@ -33,7 +33,7 @@ const Cpu = () => {
   return (
     <>
       <h3>
-        CPU temperature: {temp} <span> &#8451;</span>
+        CPU Temperature {temp} °C
       </h3>
     </>
   );

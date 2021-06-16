@@ -7,8 +7,8 @@ import classes from './Card.module.css';
 const Card = () => {
   //Change Your Town for accutrate temperature
 
-  // let myTown = 'London';
-  let myTown = 'Lowestoft';
+  let myTown = 'London';
+  // let myTown = 'Lowestoft';
 
 
   return (

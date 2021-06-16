@@ -9,12 +9,15 @@
   grid-column-start: 2;
   grid-row-start: 5;
   /* height: 2em; */
-
+  min-width: 450px;
 }
 
 .Foot p {
   padding: 1em;
-
 }
 
-
+@media only screen and (max-height: 762px) {
+  .Foot {
+    display: none;
+  }
+}

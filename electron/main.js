@@ -94,7 +94,8 @@ function createWindow() {
   // Create the browser window.
   let mainWindow = new BrowserWindow({
     width: 1024,
-    height: 768,
+    //height to match OHM window size
+    height: 872,
     backgroundColor: 'white',
     webPreferences: {
       nodeIntegration: false,

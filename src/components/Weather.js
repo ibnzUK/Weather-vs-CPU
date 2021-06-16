@@ -33,8 +33,7 @@ const Weather = (props) => {
   return (
     <div>
       <h2>
-        {`${location[0]} ${location[1]} ${temp}`}
-        <span> &#8451;</span>
+        {`${location[0]} ${location[1]} ${temp} °C`}
       </h2>
     </div>
   );
