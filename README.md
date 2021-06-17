@@ -73,6 +73,7 @@ REACT_APP_API_KEY=Your_OpenWeatherMap_API_Key
 * Not optimised for Mac or Linux OS (feel free to contribute)
 * OpenHardwareMonitor software requires Administrator rights
 * If CPU temperature is not displayed, check current date log file saved in `scripts/OpenHardwareMonitorLog-XXXX-XX-XX.csv` and get required column name for cpu temperature stats, for example column for 'CPU Package' has a name of  '/intelcpu/0/temperature/4' this value is than imported in `scripts/tempChecker.js ln:7  optionFromCSV = '/intelcpu/0/temperature/4';`
+![Logs](src/assets/logs.png)
 * If Log File is open, OpenHardwareMonitor software throws an error for not being able to update logs
 * If OpenWeatherMap application is not killed after the process is stopped, change `scripts/stop.js ln:40  'TSKILL' to  'TASKKILL /PID' `
  
